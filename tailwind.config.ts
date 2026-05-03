@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#0a0a0a",
-        panel: "#0f0f10",
-        muted: "#8a8a8a",
-        accent: "#e5a24a",
+        canvas: "#e8ecf6",
+        panel: "#ffffff",
+        muted: "#64748b",
+        accent: "#1d4ed8",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

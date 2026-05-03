@@ -8,6 +8,22 @@ export type Role = {
 
 export const experience: Role[] = [
   {
+    company: "USC Information Technology Services (ITS)",
+    location: "Los Angeles, CA · Remote",
+    title: "Student Developer",
+    dates: "March 2025 – Present",
+    highlights: [
+      "Developed and maintained RoomFinder (React, React Native): search and filter USC campus rooms by building and classroom number, with 360° imagery and map links for immersive navigation",
+      "Contributed to the VIBE Dashboard, a MERN-based platform for monitoring Shure microphones—real-time device status, battery health, and alerts so classroom audio stays reliable",
+      "Built a YOLO-based object detection pipeline for missing chairs in indoor classrooms, cutting reliance on manual space and inventory audits; trained on 2,000+ annotated images with ~90% precision across lighting and occlusion",
+      "Tuned inference for ~15–20 FPS and ~30% lower latency via input resizing and post-processing optimizations for edge-style deployment; integrated with OpenCV on live camera feeds to validate detections in operational settings",
+      "Lead a team of 12 student developers and technicians delivering technology solutions for classroom and AV infrastructure",
+      "Partner with cross-functional teams on projectors, sound systems, and instructional technology so faculty and students get seamless experiences",
+      "Organize weekly team meetings with clear goals and milestone tracking for on-time delivery",
+      "Foster a collaborative culture focused on accountability, communication, and continuous improvement",
+    ],
+  },
+  {
     company: "Deep Cognition",
     location: "Remote",
     title: "AI Intern",

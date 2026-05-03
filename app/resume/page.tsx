@@ -11,8 +11,8 @@ export default function ResumePage() {
 
   return (
     <div className="flex min-h-[70dvh] flex-col items-center justify-center px-5 py-24 text-center">
-      <p className="text-sm text-zinc-500">Opening resume…</p>
-      <p className="mt-4 text-xs text-zinc-600">
+      <p className="text-sm text-zinc-600">Opening resume…</p>
+      <p className="mt-4 text-xs text-zinc-500">
         If nothing happens,{" "}
         <Link
           href={profile.resumePath}

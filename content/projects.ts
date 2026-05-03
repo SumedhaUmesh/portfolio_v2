@@ -11,10 +11,22 @@ export type Project = {
   role: string;
   stack: string[];
   links: ProjectLink[];
+  /** Path under `public/`, e.g. `/projects/foo.png` */
+  image?: string;
+  imageAlt?: string;
   overview: string;
   highlights: string[];
   architectureNotes: string[];
 };
+
+/** Demo uses MOSAIC walkthrough; GitHub points to profile until per-repo links are set. */
+const placeholderDemoGithub: ProjectLink[] = [
+  {
+    label: "Demo video",
+    href: "https://www.youtube.com/watch?v=mJqeR_JMt8g&t=15s",
+  },
+  { label: "GitHub", href: "https://github.com/SumedhaUmesh" },
+];
 
 export const projects: Project[] = [
   {
@@ -25,7 +37,10 @@ export const projects: Project[] = [
     year: "2025",
     role: "Academic project",
     stack: ["LangGraph", "Python", "Tavily", "Anthropic Claude"],
-    links: [],
+    links: [...placeholderDemoGithub],
+    image: "/projects/deep-research-agent-card.png",
+    imageAlt:
+      "Abstract illustration of a multi-agent research system with connected planner, search, and synthesis nodes and citation-style documents.",
     overview:
       "A LangGraph-based multi-agent system that decomposes open-ended queries, orchestrates parallel research workflows across many sources, and produces structured, citation-backed reports.",
     highlights: [
@@ -46,7 +61,7 @@ export const projects: Project[] = [
     year: "2025",
     role: "Academic project",
     stack: ["Python", "FastAPI", "llama.cpp", "WebSockets", "Whisper"],
-    links: [],
+    links: [...placeholderDemoGithub],
     overview:
       "A two-stage gate-and-generator loop around a 1.2B-parameter on-device LLM, paired with an intent decomposition engine that routes compound voice commands to keyless geospatial and weather APIs.",
     highlights: [
@@ -67,7 +82,10 @@ export const projects: Project[] = [
     year: "2025",
     role: "Academic project",
     stack: ["Zephyr RTOS", "C++17", "Cortex-M", "QEMU", "GoogleTest"],
-    links: [],
+    links: [...placeholderDemoGithub],
+    image: "/projects/embedded-health-monitor-card.png",
+    imageAlt:
+      "Abstract illustration of embedded health firmware: microcontroller, heart rhythm signal, IMU, and layered software stack.",
     overview:
       "C++17 firmware on Zephyr RTOS for ARM Cortex-M using a three-tier layered architecture (drivers, services, algorithms), validated in QEMU under CI with host-side test suites.",
     highlights: [
@@ -96,7 +114,19 @@ export const projects: Project[] = [
       "OpenCV",
       "Foxglove",
     ],
-    links: [],
+    links: [
+      {
+        label: "Demo video",
+        href: "https://www.youtube.com/watch?v=mJqeR_JMt8g&t=15s",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/SumedhaUmesh/MOSAIC--Multi-Object-Sensor-Fusion-and-Intelligent-Classification",
+      },
+    ],
+    image: "/projects/mosaic-adas-foxglove.png",
+    imageAlt:
+      "Foxglove layout showing MOSAIC ADAS warnings, lane state JSON, tracks, camera image, and LiDAR point cloud.",
     overview:
       "End-to-end ROS 2 scaffold combining dataset replay, camera perception, LiDAR perception, multi-object tracking with association and EKF primitives, and ADAS warning logic with Dockerized Ubuntu 22.04 workflows.",
     highlights: [
@@ -118,7 +148,10 @@ export const projects: Project[] = [
     year: "2025",
     role: "Personal project",
     stack: ["Kotlin", "Android Automotive", "AIDL", "Room", "Gradle"],
-    links: [],
+    links: [...placeholderDemoGithub],
+    image: "/projects/caros-mini-card.png",
+    imageAlt:
+      "Illustration of an automotive infotainment touchscreen with app launcher in a modern vehicle interior.",
     overview:
       "Multi-module AAOS-style system with a core service exposing bound AIDL APIs for profiles and phone connections, a launcher, and stub media, navigation, and dashboard apps—demonstrating real-world automotive UX patterns on dual emulators.",
     highlights: [
@@ -140,7 +173,10 @@ export const projects: Project[] = [
     year: "2025",
     role: "Personal project",
     stack: ["C++17", "gRPC", "CMake", "Protobuf"],
-    links: [],
+    links: [...placeholderDemoGithub],
+    image: "/projects/distributed-file-sync-card.png",
+    imageAlt:
+      "Abstract illustration of bidirectional file sync over gRPC with mirrored folders and connected client-server nodes.",
     overview:
       "Phase-1 bootstrap of a bidirectional directory synchronization system: client and server binaries communicate over gRPC, emit structured logs, and write metrics CSVs—designed for Merkle-tree comparison and delta sync in later phases.",
     highlights: [

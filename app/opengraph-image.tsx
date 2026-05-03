@@ -15,7 +15,7 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0a0a0a",
+          background: "#f4f6fb",
           padding: 72,
           fontFamily: "system-ui, sans-serif",
         }}
@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             alignItems: "center",
-            color: "#e5a24a",
+            color: "#2563eb",
             fontSize: 22,
             letterSpacing: "0.35em",
             textTransform: "uppercase",
@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
               lineHeight: 0.9,
               letterSpacing: "-0.03em",
               textTransform: "uppercase",
-              color: "#fafafa",
+              color: "#0f172a",
             }}
           >
             <span>Sumedha</span>
@@ -59,12 +59,12 @@ export default function OpenGraphImage() {
             style={{
               display: "flex",
               fontSize: 28,
-              color: "#a1a1aa",
+              color: "#475569",
               maxWidth: 820,
               lineHeight: 1.35,
             }}
           >
-            {profile.tagline}
+            {profile.heroTagline}
           </div>
         </div>
 
@@ -74,7 +74,7 @@ export default function OpenGraphImage() {
             flexDirection: "row",
             justifyContent: "space-between",
             fontSize: 20,
-            color: "#71717a",
+            color: "#64748b",
           }}
         >
           <span>{profile.location}</span>

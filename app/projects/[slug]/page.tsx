@@ -25,6 +25,16 @@ export function generateMetadata({ params }: Props): Metadata {
     openGraph: {
       title: project.title,
       description: project.tagline,
+      ...(project.image
+        ? {
+            images: [
+              {
+                url: project.image,
+                alt: project.imageAlt,
+              },
+            ],
+          }
+        : {}),
     },
   };
 }
@@ -48,7 +58,7 @@ export default function ProjectPage({ params }: Props) {
             >
               Overview
             </h2>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-zinc-400">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-zinc-600">
               {project.overview}
             </p>
           </section>
@@ -66,7 +76,7 @@ export default function ProjectPage({ params }: Props) {
               {project.highlights.map((h) => (
                 <li
                   key={h.slice(0, 40)}
-                  className="flex gap-4 border-l-2 border-accent/40 pl-6 text-sm leading-relaxed text-zinc-300"
+                  className="flex gap-4 border-l-2 border-accent/50 pl-6 text-sm leading-relaxed text-zinc-800"
                 >
                   {h}
                 </li>
@@ -87,9 +97,9 @@ export default function ProjectPage({ params }: Props) {
               {project.architectureNotes.map((note) => (
                 <li
                   key={note.slice(0, 40)}
-                  className="flex gap-3 text-sm leading-relaxed text-zinc-500"
+                  className="flex gap-3 text-sm leading-relaxed text-zinc-600"
                 >
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-400" />
                   <span>{note}</span>
                 </li>
               ))}
@@ -98,10 +108,10 @@ export default function ProjectPage({ params }: Props) {
         </Reveal>
 
         <Reveal delay={0.16}>
-          <div className="mt-20 flex flex-wrap gap-4 border-t border-zinc-900 pt-12">
+          <div className="mt-20 flex flex-wrap gap-4 border-t border-zinc-200 pt-12">
             <Link
               href="/#projects"
-              className="rounded-full bg-zinc-100 px-8 py-3 text-xs font-semibold uppercase tracking-wider text-canvas transition-colors hover:bg-accent"
+              className="rounded-full bg-zinc-900 px-8 py-3 text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-accent"
             >
               More projects
             </Link>

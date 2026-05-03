@@ -20,14 +20,17 @@ const siteUrl = new URL(profile.portfolioUrl);
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+  },
   title: {
     default: `${profile.shortName} — Software Engineer`,
     template: `%s · ${profile.shortName}`,
   },
-  description: profile.tagline,
+  description: profile.aboutBio,
   openGraph: {
     title: `${profile.shortName} — Software Engineer`,
-    description: profile.tagline,
+    description: profile.aboutBio,
     url: siteUrl,
     siteName: profile.shortName,
     locale: "en_US",
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${profile.shortName} — Software Engineer`,
-    description: profile.tagline,
+    description: profile.aboutBio,
   },
   robots: {
     index: true,
@@ -55,7 +58,13 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} min-h-dvh bg-canvas antialiased`}
       >
         <Nav />
-        <main>{children}</main>
+        <main className="relative isolate">
+          <div
+            className="pointer-events-none fixed inset-0 -z-10 pattern-dots opacity-[0.85]"
+            aria-hidden
+          />
+          {children}
+        </main>
       </body>
     </html>
   );
