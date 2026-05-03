@@ -1,0 +1,51 @@
+# Next.js static export — publish the `out/` directory (not the repo root).
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next is built with `trailingSlash: true` → routes live at `/path/index.html`.
+# If someone opens `/projects/foo` (no slash), Netlify can 404; send them to the trailing-slash URL.
+[[redirects]]
+  from = "/projects/deep-research-agent"
+  to = "/projects/deep-research-agent/"
+  status = 301
+
+[[redirects]]
+  from = "/projects/concierge"
+  to = "/projects/concierge/"
+  status = 301
+
+[[redirects]]
+  from = "/projects/embedded-health-monitor"
+  to = "/projects/embedded-health-monitor/"
+  status = 301
+
+[[redirects]]
+  from = "/projects/mosaic"
+  to = "/projects/mosaic/"
+  status = 301
+
+[[redirects]]
+  from = "/projects/caros-mini"
+  to = "/projects/caros-mini/"
+  status = 301
+
+[[redirects]]
+  from = "/projects/distributed-file-sync"
+  to = "/projects/distributed-file-sync/"
+  status = 301
+
+[[redirects]]
+  from = "/resume"
+  to = "/resume/"
+  status = 301
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks/"
+  status = 301
